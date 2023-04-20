@@ -5,6 +5,10 @@ import model.MenuItem;
 import javax.swing.*;
 import java.util.ArrayList;
 
+/**
+ *
+ * @author Cristian Gligan
+ */
 public class RPanel extends JPanel {
     private final MainFrame mainFrame;
     private JList<Object> rightPanelList;
@@ -17,6 +21,13 @@ public class RPanel extends JPanel {
     private final int width;
     private final int height;
 
+    /**
+     *
+     * @param width
+     * @param height
+     * @param mainFrame
+     * @author Cristian Gligan
+     */
     public RPanel(int width, int height, MainFrame mainFrame) {
         this.mainFrame = mainFrame;
         this.setLayout(null);
@@ -27,6 +38,10 @@ public class RPanel extends JPanel {
         setUp();
     }
 
+    /**
+     *
+     * @author Cristian Gligan
+     */
     private void setUp() {
         lblTitle = new JLabel("CURRENT ORDER");
         lblTitle.setLocation(2, 0);
@@ -64,6 +79,7 @@ public class RPanel extends JPanel {
      *
      * @param items An array of String where each element will be shown
      *              one line in the panel.
+     * @author Cristian Gligan
      */
     protected void populateList(ArrayList<MenuItem> items) {
         rightPanelList.setListData(items.toArray());
@@ -79,24 +95,36 @@ public class RPanel extends JPanel {
      * <p>
      * Several solutions have been tested but none worked to satisfaction.
      * Please notify teachers if you might come across a solution that actually works well.
+     * @author Cristian Gligan
      */
     protected void clearList() {
         ArrayList<MenuItem> emptyList = new ArrayList<>();
         populateList(emptyList);
     }
 
-    protected void setTextTitleLabel(String labelText) {
-        lblTitle.setText(labelText);
-    }
-
+    /**
+     *
+     * @param labelText
+     * @author Cristian Gligan
+     */
     protected void setTextCostLabel(String labelText) {
         lblCost.setText(labelText);
     }
 
+    /**
+     *
+     * @return
+     * @author Cristian Gligan
+     */
     protected JButton getBtnCreateOrder() {
         return btnOrder;
     }
 
+    /**
+     *
+     * @return
+     * @author Cristian Gligan
+     */
     protected JButton getBtnViewSelectedOrder() {
         return btnViewSelectedOrder;
     }

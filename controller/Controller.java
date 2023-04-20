@@ -13,6 +13,9 @@ import java.util.ArrayList;
 import static javax.swing.JOptionPane.WARNING_MESSAGE;
 import static javax.swing.JOptionPane.YES_NO_OPTION;
 
+/**
+ * @author Cristian Gligan
+ */
 public class Controller {
     private final MainFrame view;
     private final int nbrOfOrders = 0; // for test purposes - delete if not used in final solution
@@ -26,6 +29,10 @@ public class Controller {
     private ArrayList<MenuItem> currentOrderList;
     private double costCurrentOrder = 0; // for test purposes - delete if not used in final solution
 
+    /**
+     *
+     * @author Cristian Gligan
+     */
     public Controller() {
         view = new MainFrame(1000, 500, this);
         loadStringTestValues(); //for test purposes - remove when not needed more
@@ -34,7 +41,10 @@ public class Controller {
         view.disableViewSelectedOrderButton();
     }
 
-    //This method is only used for test purposes - remove when no longer needed
+    /**
+     *
+     * @author Cristian Gligan
+     */
     private void loadStringTestValues() {
         foodMenu = new ArrayList<>();
         drinkMenu = new ArrayList<>();
@@ -93,6 +103,11 @@ public class Controller {
 
     }
 
+    /**
+     *
+     * @param button
+     * @author Cristian Gligan
+     */
     //This method is called by class MinFrame when a button in teh GUI is pressed
     public void buttonPressed(ButtonType button) {
 
@@ -127,6 +142,11 @@ public class Controller {
         }
     }
 
+    /**
+     *
+     * @param selectionIndex
+     * @author Cristian Gligan
+     */
     public void addItemToOrder(int selectionIndex) {
         if (selectionIndex != -1) {// if something is selected in the left menu list
             switch (currentLeftMenu) {
@@ -157,6 +177,11 @@ public class Controller {
 
     }
 
+    /**
+     *
+     * @param selectionIndex
+     * @author Cristian Gligan
+     */
     public void viewSelectedOrder(int selectionIndex) {
         if ((selectionIndex != -1) && currentLeftMenu == ButtonType.OrderHistory) {
             Order selectedOrder = (Order) orderList.get(selectionIndex);
@@ -165,7 +190,10 @@ public class Controller {
         }
     }
 
-
+    /**
+     *
+     * @author Cristian Gligan
+     */
     public void setToFoodMenu() {
         currentLeftMenu = ButtonType.Food;
         view.populateLeftPanel(foodMenu);
@@ -176,7 +204,10 @@ public class Controller {
         view.disableViewSelectedOrderButton();
     }
 
-
+    /**
+     *
+     * @author Cristian Gligan
+     */
     public void setToDrinkMenu() {
         currentLeftMenu = ButtonType.Drinks;
         view.populateLeftPanel(drinkMenu);
@@ -187,6 +218,10 @@ public class Controller {
         view.disableViewSelectedOrderButton();
     }
 
+    /**
+     *
+     * @author Cristian Gligan
+     */
     public void setToOrderHistoryMenu() {
         currentLeftMenu = ButtonType.OrderHistory;
         view.clearRightPanel();
@@ -196,13 +231,20 @@ public class Controller {
         view.disableOrderButton();
     }
 
-
+    /**
+     *
+     * @author Cristian Gligan
+     */
     public void addNewFood() {
         newPizzaType = new CustomPizzaFrame(this);
         //For grade VG: Add more code to save the new Pizza type and update menu,
         view.enableAllButtons();
     }
 
+    /**
+     *
+     * @author Cristian Gligan
+     */
     public void placeOrder() {
         if (!currentOrderList.isEmpty()) {
             boolean orderIsValid = false;

@@ -1,5 +1,9 @@
 package model;
 
+/**
+ *
+ * @author Cristian Gligan
+ */
 public enum Topping {
     PEPPERONI("pepperoni", 10),
     CHEESE("cheese", 10),
@@ -13,15 +17,31 @@ public enum Topping {
     private final String name;
     private final double cost;
 
+    /**
+     *
+     * @param name
+     * @param cost
+     * @author Cristian Gligan
+     */
     Topping(String name, double cost) {
         this.name = name;
         this.cost = cost;
     }
 
+    /**
+     *
+     * @return
+     * @author Cristian Gligan
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     *
+     * @return
+     * @author Cristian Gligan
+     */
     public double getCost() {
         return cost;
     }

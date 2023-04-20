@@ -5,6 +5,10 @@ import model.MenuItem;
 import javax.swing.*;
 import java.util.ArrayList;
 
+/**
+ *
+ * @author Cristian Gligan
+ */
 public class LPanel extends JPanel {
     private JList<Object> leftPanelList;
     private JButton btnShowDrinks;
@@ -19,6 +23,13 @@ public class LPanel extends JPanel {
 
     private final MainFrame mainFrame;
 
+    /**
+     *
+     * @param width
+     * @param height
+     * @param mainFrame
+     * @author Cristian Gligan
+     */
     public LPanel(int width, int height, MainFrame mainFrame) {
         this.mainFrame = mainFrame;
         this.setLayout(null);
@@ -29,6 +40,10 @@ public class LPanel extends JPanel {
         setUp();
     }
 
+    /**
+     *
+     * @author Cristian Gligan
+     */
     private void setUp() {
         titleLeftPanel = new JLabel("Make menu choice with buttons");
         titleLeftPanel.setLocation(20, 0);
@@ -78,31 +93,65 @@ public class LPanel extends JPanel {
         this.add(btnShowOrderHistory);
     }
 
+    /**
+     *
+     * @return
+     * @author Cristian Gligan
+     */
     protected JList<Object> getLeftPanelList() {
         return leftPanelList;
     }
 
+    /**
+     *
+     * @author Cristian Gligan
+     */
     protected void clearList() {
         ArrayList<MenuItem> emptyList = new ArrayList<>();
         populateList(emptyList);
     }
 
+    /**
+     *
+     * @return
+     * @author Cristian Gligan
+     */
     protected JButton getShowOrderHistory() {
         return btnShowOrderHistory;
     }
 
+    /**
+     *
+     * @return
+     * @author Cristian Gligan
+     */
     protected JButton getBtnShowDrinks() {
         return btnShowDrinks;
     }
 
+    /**
+     *
+     * @return
+     * @author Cristian Gligan
+     */
     protected JButton getBtnShowFood() {
         return btnShowFood;
     }
 
+    /**
+     *
+     * @return
+     * @author Cristian Gligan
+     */
     protected JButton getBtnAddSelectionToOrder() {
         return btnAddSelectionToOrder;
     }
 
+    /**
+     *
+     * @return
+     * @author Cristian Gligan
+     */
     protected JButton getBtnCreateNewPizzaType() {
         return btnCreateNewPizzaType;
     }
@@ -113,6 +162,7 @@ public class LPanel extends JPanel {
      *
      * @param items An array of String where each element will be shown
      *              one line in the panel.
+     * @author Cristian Gligan
      */
     public void populateList(ArrayList<MenuItem> items) {
         leftPanelList.setListData(items.toArray());

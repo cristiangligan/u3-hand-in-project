@@ -2,11 +2,22 @@ package view;
 
 import javax.swing.*;
 
+/**
+ *
+ * @author Cristian Gligan
+ */
 public class MainPanel extends JPanel {
     private final LPanel lPanel;
     private final RPanel rPanel;
 
 
+    /**
+     *
+     * @param width
+     * @param height
+     * @param mainFrame
+     * @author Cristian Gligan
+     */
     public MainPanel(int width, int height, MainFrame mainFrame) {
         super(null);
         this.setSize(width, height);
@@ -18,10 +29,20 @@ public class MainPanel extends JPanel {
         add(rPanel);
     }
 
+    /**
+     *
+     * @return
+     * @author Cristian Gligan
+     */
     protected LPanel getLeftPanel() {
         return lPanel;
     }
 
+    /**
+     *
+     * @return
+     * @author Cristian Gligan
+     */
     protected RPanel getRightPanel() {
         return rPanel;
     }

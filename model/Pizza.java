@@ -2,6 +2,10 @@ package model;
 
 import java.util.ArrayList;
 
+/**
+ *
+ * @author Cristian Gligan
+ */
 public class Pizza extends Food {
     private final ArrayList<Topping> toppings;
     private double baseCost;
@@ -12,6 +16,7 @@ public class Pizza extends Food {
      * @param name     the name of the pizza
      * @param baseCost the cost of the pizza crust
      * @param toppings the list of the {@link Topping} instances used on the pizza crust
+     * @author Cristian Gligan
      */
     public Pizza(String name, double baseCost, ArrayList<Topping> toppings) {
         this.name = name;
@@ -22,8 +27,9 @@ public class Pizza extends Food {
 
     /**
      * @return
+     * @author Cristian Gligan
      */
-    private double getTotalCost() {
+    protected double getTotalCost() {
         double totalCost = baseCost;
         for (Topping topping : toppings) {
             totalCost += topping.getCost();
@@ -31,14 +37,11 @@ public class Pizza extends Food {
         return totalCost;
     }
 
-    public double getBaseCost() {
-        return baseCost;
-    }
-
-    public void setBaseCost(double baseCost) {
-        this.baseCost = baseCost;
-    }
-
+    /**
+     *
+     * @return
+     * @author Cristian Gligan
+     */
     public String toString() {
         String stringToReturn;
         stringToReturn = name + ", ";

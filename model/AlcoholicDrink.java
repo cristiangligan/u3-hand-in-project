@@ -1,8 +1,21 @@
 package model;
 
+/**
+ *
+ * @author Cristian Gligan
+ */
 public class AlcoholicDrink extends Drink {
+
     private double alcoholPercentage;
 
+    /**
+     *
+     * @param name
+     * @param cost
+     * @param carbonated
+     * @param alcoholPercentage
+     * @author Cristian Gligan
+     */
     public AlcoholicDrink(String name, double cost, boolean carbonated, double alcoholPercentage) {
         this.name = name;
         this.cost = cost;
@@ -10,14 +23,11 @@ public class AlcoholicDrink extends Drink {
         this.alcoholPercentage = alcoholPercentage;
     }
 
-    public double getAlcoholPercentage() {
-        return alcoholPercentage;
-    }
-
-    public void setAlcoholPercentage(double alcoholPercentage) {
-        this.alcoholPercentage = alcoholPercentage;
-    }
-
+    /**
+     *
+     * @return
+     * @author Cristian Gligan
+     */
     public String toString() {
         String stringToReturn;
         stringToReturn = name + ", ";
