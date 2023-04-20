@@ -3,12 +3,13 @@ package model;
 import java.util.ArrayList;
 
 public class Pizza extends Food {
-    private ArrayList<Topping> toppings;
+    private final ArrayList<Topping> toppings;
     private double baseCost;
 
     /**
      * Constructor
-     * @param name the name of the pizza
+     *
+     * @param name     the name of the pizza
      * @param baseCost the cost of the pizza crust
      * @param toppings the list of the {@link Topping} instances used on the pizza crust
      */
@@ -18,8 +19,8 @@ public class Pizza extends Food {
         this.toppings = toppings;
         cost = getTotalCost();
     }
+
     /**
-     *
      * @return
      */
     private double getTotalCost() {
@@ -38,7 +39,7 @@ public class Pizza extends Food {
         this.baseCost = baseCost;
     }
 
-    public String toString(){
+    public String toString() {
         String stringToReturn;
         stringToReturn = name + ", ";
         for (Topping t : toppings) {

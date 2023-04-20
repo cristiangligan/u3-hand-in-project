@@ -2,7 +2,8 @@ package model;
 
 public class OrderItem extends MenuItem {
 
-    private MenuItem menuItem;
+    private final MenuItem menuItem;
+
     public OrderItem(MenuItem menuItem) {
         this.name = menuItem.getName();
         this.cost = menuItem.getCost();

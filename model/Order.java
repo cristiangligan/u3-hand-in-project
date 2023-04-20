@@ -2,9 +2,9 @@ package model;
 
 import java.util.ArrayList;
 
-public class Order extends MenuItem{
-    private int id;
-    private ArrayList<MenuItem> orderItems;
+public class Order extends MenuItem {
+    private final int id;
+    private final ArrayList<MenuItem> orderItems;
 
     public Order(int id, double cost, ArrayList<MenuItem> orderItems) {
         this.id = id;

@@ -6,12 +6,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 public class CustomPizzaFrame extends JFrame implements ActionListener {
-    private JPanel mainPanel;
+    private final JPanel mainPanel;
 
-    private Controller controller;
+    private final Controller controller;
 
     public CustomPizzaFrame(Controller controller) {
         mainPanel = new JPanel(new GridLayout(1, 1));

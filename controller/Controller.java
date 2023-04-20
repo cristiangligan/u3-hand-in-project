@@ -15,18 +15,16 @@ import static javax.swing.JOptionPane.YES_NO_OPTION;
 
 public class Controller {
     private final MainFrame view;
+    private final int nbrOfOrders = 0; // for test purposes - delete if not used in final solution
     private CustomPizzaFrame newPizzaType;
     private ButtonType currentLeftMenu = ButtonType.NoChoice;
     private ArrayList<MenuItem> foodMenu;
     private ArrayList<MenuItem> drinkMenu;
-
     private ArrayList<MenuItem> orderList;
     private String[] orderHistoryMenuString; // for test purposes - delete if not used in final solution
     private String[] order1Simulation; // for test purposes - delete if not used in final solution
-
     private ArrayList<MenuItem> currentOrderList;
     private double costCurrentOrder = 0; // for test purposes - delete if not used in final solution
-    private final int nbrOfOrders = 0; // for test purposes - delete if not used in final solution
 
     public Controller() {
         view = new MainFrame(1000, 500, this);

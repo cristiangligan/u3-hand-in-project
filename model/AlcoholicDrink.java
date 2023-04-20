@@ -1,6 +1,6 @@
 package model;
 
-public class AlcoholicDrink extends Drink{
+public class AlcoholicDrink extends Drink {
     private double alcoholPercentage;
 
     public AlcoholicDrink(String name, double cost, boolean carbonated, double alcoholPercentage) {

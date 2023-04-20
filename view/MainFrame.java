@@ -2,14 +2,13 @@ package view;
 
 import controller.Controller;
 import model.MenuItem;
-import model.Pizza;
 
 import javax.swing.*;
 import java.util.ArrayList;
 
 public class MainFrame extends JFrame {
-    private MainPanel mainPanel;
-    private Controller controller;
+    private final MainPanel mainPanel;
+    private final Controller controller;
 
     public MainFrame(int width, int height, Controller controller) {
         super("Restaurant");
@@ -27,9 +26,9 @@ public class MainFrame extends JFrame {
      * This method sets the information in the LEFT panel of the main window.
      *
      * @param items An array of String where each element will be shown
-     *                        one line in the panel.
+     *              one line in the panel.
      */
-    public void populateLeftPanel(ArrayList<MenuItem> items){
+    public void populateLeftPanel(ArrayList<MenuItem> items) {
         mainPanel.getLeftPanel().populateList(items);
     }
 
@@ -37,9 +36,9 @@ public class MainFrame extends JFrame {
      * This method sets the information in the RIGHT panel of the main window.
      *
      * @param informationArray An array of String where each element will be shown
-     *                        one line in the panel.
+     *                         one line in the panel.
      */
-    public void populateRightPanel(ArrayList<MenuItem> items){
+    public void populateRightPanel(ArrayList<MenuItem> items) {
         mainPanel.getRightPanel().populateList(items);
     }
 
@@ -49,7 +48,7 @@ public class MainFrame extends JFrame {
      * appear in the list view at the top of the list after use of this method.
      * This might throw selected indexes of synchronization if this is used.
      */
-    public void clearRightPanel(){
+    public void clearRightPanel() {
         mainPanel.getRightPanel().clearList();
     }
 
@@ -63,7 +62,7 @@ public class MainFrame extends JFrame {
      *
      * @return the index of the selected row as an int. If no selection exists -1 is returned.
      */
-    public int getSelectionLeftPanel(){
+    public int getSelectionLeftPanel() {
         return mainPanel.getLeftPanel().getLeftPanelList().getSelectedIndex();
     }
 
@@ -73,7 +72,7 @@ public class MainFrame extends JFrame {
      *
      * @param newText the text that is shown in the GUI
      */
-    public void setTextCostLabelRightPanel(String newText){
+    public void setTextCostLabelRightPanel(String newText) {
         mainPanel.getRightPanel().setTextCostLabel(newText);
     }
 
@@ -83,14 +82,14 @@ public class MainFrame extends JFrame {
      *
      * @param newText the text that is shown in hte GUI
      */
-    public void setTextTitleLabelRightPanel(String newText){
+    public void setTextTitleLabelRightPanel(String newText) {
         mainPanel.getRightPanel().setTextTitleLabel(newText);
     }
 
     /**
      * This method disables the possibility to press the button labeled "Food".
      */
-    public void disableFoodMenuButton(){
+    public void disableFoodMenuButton() {
         mainPanel.getLeftPanel().getBtnShowFood().setEnabled(false);
     }
 
@@ -98,7 +97,7 @@ public class MainFrame extends JFrame {
     /**
      * This method disables the possibility to press the button labeled "Drinks".
      */
-    public void disableDrinksMenuButton(){
+    public void disableDrinksMenuButton() {
         mainPanel.getLeftPanel().getBtnShowDrinks().setEnabled(false);
     }
 
@@ -106,28 +105,28 @@ public class MainFrame extends JFrame {
     /**
      * This method disables the possibility to press the button labeled "Add".
      */
-    public void disableAddMenuButton(){
+    public void disableAddMenuButton() {
         mainPanel.getLeftPanel().getBtnAddSelectionToOrder().setEnabled(false);
     }
 
     /**
      * This method disables the possibility to press the button labeled "Order".
      */
-    public void disableOrderButton(){
+    public void disableOrderButton() {
         mainPanel.getRightPanel().getBtnCreateOrder().setEnabled(false);
     }
 
     /**
      * This method disables the possibility to press the button labeled "View order".
      */
-    public void disableViewSelectedOrderButton(){
+    public void disableViewSelectedOrderButton() {
         mainPanel.getRightPanel().getBtnViewSelectedOrder().setEnabled(false);
     }
 
     /**
      * This method enables all buttons in the GUI to be pressed.
      */
-    public void enableAllButtons(){
+    public void enableAllButtons() {
         mainPanel.getLeftPanel().getBtnShowFood().setEnabled(true);
         mainPanel.getLeftPanel().getBtnShowDrinks().setEnabled(true);
         mainPanel.getLeftPanel().getBtnCreateNewPizzaType().setEnabled(true);
@@ -145,7 +144,7 @@ public class MainFrame extends JFrame {
      * @param pressedButton the type of button
      * @see ButtonType
      */
-    public void buttonPressed(ButtonType pressedButton){
+    public void buttonPressed(ButtonType pressedButton) {
         controller.buttonPressed(pressedButton);
     }
 }

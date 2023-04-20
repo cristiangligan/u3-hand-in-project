@@ -1,7 +1,6 @@
 package view;
 
 import model.MenuItem;
-import model.Pizza;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -15,10 +14,10 @@ public class LPanel extends JPanel {
     private JButton btnAddSelectionToOrder;
     private JLabel titleLeftPanel;
 
-    private int width;
-    private int height;
+    private final int width;
+    private final int height;
 
-    private MainFrame mainFrame;
+    private final MainFrame mainFrame;
 
     public LPanel(int width, int height, MainFrame mainFrame) {
         this.mainFrame = mainFrame;
@@ -33,7 +32,7 @@ public class LPanel extends JPanel {
     private void setUp() {
         titleLeftPanel = new JLabel("Make menu choice with buttons");
         titleLeftPanel.setLocation(20, 0);
-        titleLeftPanel.setSize(width/2, 20);
+        titleLeftPanel.setSize(width / 2, 20);
         this.add(titleLeftPanel);
 
         leftPanelList = new JList<>();
@@ -58,7 +57,7 @@ public class LPanel extends JPanel {
         btnCreateNewPizzaType = new JButton("Make Pizza");
         btnCreateNewPizzaType.setEnabled(true);
         btnCreateNewPizzaType.setSize(width / 5, 30);
-        btnCreateNewPizzaType.setLocation((width / 5)*2, height - 75);
+        btnCreateNewPizzaType.setLocation((width / 5) * 2, height - 75);
         btnCreateNewPizzaType.addActionListener(l -> {
             mainFrame.buttonPressed(ButtonType.MakePizza); //fog grade VG: what happens if this button is pressed ultiple times?
         });
@@ -68,13 +67,13 @@ public class LPanel extends JPanel {
         btnAddSelectionToOrder.setEnabled(true);
         btnAddSelectionToOrder.setSize(width / 5, 30);
         btnAddSelectionToOrder.addActionListener(l -> mainFrame.buttonPressed(ButtonType.Add));
-        btnAddSelectionToOrder.setLocation((width / 5)*3, height - 75);
+        btnAddSelectionToOrder.setLocation((width / 5) * 3, height - 75);
         this.add(btnAddSelectionToOrder);
 
         btnShowOrderHistory = new JButton("Order history");
         btnShowOrderHistory.setEnabled(true);
         btnShowOrderHistory.setSize(width / 5, 30);
-        btnShowOrderHistory.setLocation((width/5)*4, height - 75);
+        btnShowOrderHistory.setLocation((width / 5) * 4, height - 75);
         btnShowOrderHistory.addActionListener(l -> mainFrame.buttonPressed(ButtonType.OrderHistory));
         this.add(btnShowOrderHistory);
     }
@@ -83,7 +82,7 @@ public class LPanel extends JPanel {
         return leftPanelList;
     }
 
-    protected void clearList(){
+    protected void clearList() {
         ArrayList<MenuItem> emptyList = new ArrayList<>();
         populateList(emptyList);
     }
@@ -96,20 +95,26 @@ public class LPanel extends JPanel {
         return btnShowDrinks;
     }
 
-    protected JButton getBtnShowFood() { return btnShowFood; }
+    protected JButton getBtnShowFood() {
+        return btnShowFood;
+    }
 
-    protected JButton getBtnAddSelectionToOrder() { return btnAddSelectionToOrder; }
+    protected JButton getBtnAddSelectionToOrder() {
+        return btnAddSelectionToOrder;
+    }
 
-    protected JButton getBtnCreateNewPizzaType() { return btnCreateNewPizzaType; }
+    protected JButton getBtnCreateNewPizzaType() {
+        return btnCreateNewPizzaType;
+    }
 
 
     /**
      * This method sets the information in the panel's list view.
      *
      * @param items An array of String where each element will be shown
-     *                        one line in the panel.
+     *              one line in the panel.
      */
-    public void populateList(ArrayList<MenuItem> items){
+    public void populateList(ArrayList<MenuItem> items) {
         leftPanelList.setListData(items.toArray());
     }
 
