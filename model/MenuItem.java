@@ -1,6 +1,7 @@
 package model;
 
 /**
+ * Base class defining the properties and implementing the behavior of a generic menu item.
  *
  * @author Cristian Gligan
  */
@@ -10,8 +11,9 @@ public abstract class MenuItem implements IMenuItem {
     protected double cost;
 
     /**
+     * Gets the total cost of this menu item.
      *
-     * @return
+     * @return the total cost of this menu item as {@link Double}
      * @author Cristian Gligan
      */
     @Override
@@ -20,8 +22,9 @@ public abstract class MenuItem implements IMenuItem {
     }
 
     /**
+     * Gets the name of this menu item.
      *
-     * @return
+     * @return the name of this menu item as {@link String}
      * @author Cristian Gligan
      */
     @Override

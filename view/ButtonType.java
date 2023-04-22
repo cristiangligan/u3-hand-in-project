@@ -1,6 +1,7 @@
 package view;
 
 /**
+ * Enum for all possible button types in the application.
  *
  * @author Cristian Gligan
  */

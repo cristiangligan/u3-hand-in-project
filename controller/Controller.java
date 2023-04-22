@@ -14,22 +14,23 @@ import static javax.swing.JOptionPane.WARNING_MESSAGE;
 import static javax.swing.JOptionPane.YES_NO_OPTION;
 
 /**
+ * Class defining the Controller of the application
+ *
  * @author Cristian Gligan
  */
 public class Controller {
     private final MainFrame view;
-    private final int nbrOfOrders = 0; // for test purposes - delete if not used in final solution
+    // for test purposes - delete if not used in final solution
     private CustomPizzaFrame newPizzaType;
     private ButtonType currentLeftMenu = ButtonType.NoChoice;
     private ArrayList<MenuItem> foodMenu;
     private ArrayList<MenuItem> drinkMenu;
     private ArrayList<MenuItem> orderList;
-    private String[] orderHistoryMenuString; // for test purposes - delete if not used in final solution
-    private String[] order1Simulation; // for test purposes - delete if not used in final solution
     private ArrayList<MenuItem> currentOrderList;
     private double costCurrentOrder = 0; // for test purposes - delete if not used in final solution
 
     /**
+     * Controller constructor
      *
      * @author Cristian Gligan
      */
@@ -39,19 +40,19 @@ public class Controller {
         view.enableAllButtons();
         view.disableAddMenuButton();
         view.disableViewSelectedOrderButton();
+
+        currentOrderList = new ArrayList<>();
+        orderList = new ArrayList<>();
     }
 
     /**
+     * Loads the data used in the application.
      *
      * @author Cristian Gligan
      */
     private void loadStringTestValues() {
         foodMenu = new ArrayList<>();
         drinkMenu = new ArrayList<>();
-        currentOrderList = new ArrayList<>();
-        orderList = new ArrayList<>();
-        orderHistoryMenuString = new String[10];
-        order1Simulation = new String[10];
 
         ArrayList<Topping> kebabPizzaToppings = new ArrayList<>();
         kebabPizzaToppings.add(Topping.KEBAB);
@@ -92,23 +93,14 @@ public class Controller {
 
         Drink ginTonic = new AlcoholicDrink("Gin Tonic", 86, true, 12);
         drinkMenu.add(ginTonic);
-
-        orderHistoryMenuString[0] = "order1: kostnad:100";
-        orderHistoryMenuString[1] = "order2: kostand:200";
-
-        order1Simulation[0] = "Order 1";
-        order1Simulation[1] = "mat1 pris1";
-        order1Simulation[2] = "mat2 pris2";
-        order1Simulation[3] = "dryck1 pris3";
-
     }
 
     /**
+     * Handles all the button pressed events that occurred in the GUI.
      *
-     * @param button
+     * @param button is the type of the button pressed
      * @author Cristian Gligan
      */
-    //This method is called by class MinFrame when a button in teh GUI is pressed
     public void buttonPressed(ButtonType button) {
 
         switch (button) {
@@ -143,8 +135,9 @@ public class Controller {
     }
 
     /**
+     * Adds the selected menu item in the list of the left panel to the current open order.
      *
-     * @param selectionIndex
+     * @param selectionIndex the index of the selected menu item in the list
      * @author Cristian Gligan
      */
     public void addItemToOrder(int selectionIndex) {
@@ -178,8 +171,9 @@ public class Controller {
     }
 
     /**
+     * Displays, in the list of the right panel, the selected order in the left panel.
      *
-     * @param selectionIndex
+     * @param selectionIndex the index of the selected order in the list
      * @author Cristian Gligan
      */
     public void viewSelectedOrder(int selectionIndex) {
@@ -191,6 +185,7 @@ public class Controller {
     }
 
     /**
+     * Populates the list of the left panel with pizza items.
      *
      * @author Cristian Gligan
      */
@@ -205,6 +200,7 @@ public class Controller {
     }
 
     /**
+     * Populates the list of the left panel with drink items.
      *
      * @author Cristian Gligan
      */
@@ -219,6 +215,7 @@ public class Controller {
     }
 
     /**
+     * Populates the list of the left panel with the order history items.
      *
      * @author Cristian Gligan
      */
@@ -231,10 +228,6 @@ public class Controller {
         view.disableOrderButton();
     }
 
-    /**
-     *
-     * @author Cristian Gligan
-     */
     public void addNewFood() {
         newPizzaType = new CustomPizzaFrame(this);
         //For grade VG: Add more code to save the new Pizza type and update menu,
@@ -242,6 +235,9 @@ public class Controller {
     }
 
     /**
+     * Tries to close the current order and adds it to the order history.
+     * The order will be closed only if it contains at least one pizza.
+     * If the order doesn't contain at least one pizza, the order is not closed.
      *
      * @author Cristian Gligan
      */
@@ -270,6 +266,4 @@ public class Controller {
             }
         }
     }
-
-
 }

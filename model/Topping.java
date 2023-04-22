@@ -1,6 +1,7 @@
 package model;
 
 /**
+ * Enum for all available {@link Pizza} toppings.
  *
  * @author Cristian Gligan
  */
@@ -18,9 +19,10 @@ public enum Topping {
     private final double cost;
 
     /**
+     * Topping constructor
      *
-     * @param name
-     * @param cost
+     * @param name the name of the topping
+     * @param cost the cost of the topping
      * @author Cristian Gligan
      */
     Topping(String name, double cost) {
@@ -29,8 +31,9 @@ public enum Topping {
     }
 
     /**
+     * Gets the name of the topping.
      *
-     * @return
+     * @return the name of the topping as {@link String}
      * @author Cristian Gligan
      */
     public String getName() {
@@ -38,8 +41,9 @@ public enum Topping {
     }
 
     /**
+     * Gets the cost of the topping.
      *
-     * @return
+     * @return the cost of the topping as {@link Double}
      * @author Cristian Gligan
      */
     public double getCost() {

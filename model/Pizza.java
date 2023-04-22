@@ -3,6 +3,7 @@ package model;
 import java.util.ArrayList;
 
 /**
+ * Class defining pizzas.
  *
  * @author Cristian Gligan
  */
@@ -11,9 +12,9 @@ public class Pizza extends Food {
     private double baseCost;
 
     /**
-     * Constructor
+     * Pizza constructor
      *
-     * @param name     the name of the pizza
+     * @param name the name of the pizza
      * @param baseCost the cost of the pizza crust
      * @param toppings the list of the {@link Topping} instances used on the pizza crust
      * @author Cristian Gligan
@@ -26,7 +27,9 @@ public class Pizza extends Food {
     }
 
     /**
-     * @return
+     * Gets the total cost of the pizza.
+     *
+     * @return the total cost of the pizza as {@link Double}
      * @author Cristian Gligan
      */
     protected double getTotalCost() {
@@ -37,11 +40,6 @@ public class Pizza extends Food {
         return totalCost;
     }
 
-    /**
-     *
-     * @return
-     * @author Cristian Gligan
-     */
     public String toString() {
         String stringToReturn;
         stringToReturn = name + ", ";

@@ -6,6 +6,7 @@ import javax.swing.*;
 import java.util.ArrayList;
 
 /**
+ * Contains a list of ordered items and the buttons on the right side of the main panel.
  *
  * @author Cristian Gligan
  */
@@ -22,10 +23,11 @@ public class RPanel extends JPanel {
     private final int height;
 
     /**
+     * RPanel constructor
      *
-     * @param width
-     * @param height
-     * @param mainFrame
+     * @param width the width of the panel in pixels
+     * @param height the height of the panel in pixels
+     * @param mainFrame reference to the {@link MainFrame} instance
      * @author Cristian Gligan
      */
     public RPanel(int width, int height, MainFrame mainFrame) {
@@ -39,6 +41,7 @@ public class RPanel extends JPanel {
     }
 
     /**
+     * Sets up the UI of the {@link RPanel}.
      *
      * @author Cristian Gligan
      */
@@ -71,14 +74,13 @@ public class RPanel extends JPanel {
         btnViewSelectedOrder.setLocation(width / 5, height - 75);
         btnViewSelectedOrder.addActionListener(l -> mainFrame.buttonPressed(ButtonType.ViewOrder));
         this.add(btnViewSelectedOrder);
-
     }
 
     /**
      * This method sets the information in the panel's list view.
      *
-     * @param items An array of String where each element will be shown
-     *              one line in the panel.
+     * @param items An {@link ArrayList} of {@link MenuItem} where each element
+     *              will be shown one line in the panel.
      * @author Cristian Gligan
      */
     protected void populateList(ArrayList<MenuItem> items) {
@@ -87,14 +89,7 @@ public class RPanel extends JPanel {
 
     /**
      * This method removes information in the panels list.
-     * There are some problems with this in this code and "ghost items" might
-     * appear in the list view at the top of the list after use of this method.
-     * This might throw selected indexes of synchronization if this is used.
-     * <p>
-     * This is a "hack" and not a perfect solution - GUIs are annoying to work with!
-     * <p>
-     * Several solutions have been tested but none worked to satisfaction.
-     * Please notify teachers if you might come across a solution that actually works well.
+     *
      * @author Cristian Gligan
      */
     protected void clearList() {
@@ -103,8 +98,9 @@ public class RPanel extends JPanel {
     }
 
     /**
+     * Sets the total cost of the order in the label at the top of the {@link RPanel}.
      *
-     * @param labelText
+     * @param labelText the total cost value as text
      * @author Cristian Gligan
      */
     protected void setTextCostLabel(String labelText) {
@@ -112,8 +108,9 @@ public class RPanel extends JPanel {
     }
 
     /**
+     * Returns an instance of the {@link JButton} button used to create an order.
      *
-     * @return
+     * @return instance of the {@link JButton} button used to create an order
      * @author Cristian Gligan
      */
     protected JButton getBtnCreateOrder() {
@@ -121,8 +118,9 @@ public class RPanel extends JPanel {
     }
 
     /**
+     * Returns an instance of the {@link JButton} button used to show the selected order.
      *
-     * @return
+     * @return instance of the {@link JButton} button used to show the selected order
      * @author Cristian Gligan
      */
     protected JButton getBtnViewSelectedOrder() {

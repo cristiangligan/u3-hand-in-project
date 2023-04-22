@@ -3,6 +3,7 @@ package model;
 import java.util.ArrayList;
 
 /**
+ * Class defining a customer's order.
  *
  * @author Cristian Gligan
  */
@@ -11,10 +12,11 @@ public class Order extends MenuItem {
     private final ArrayList<MenuItem> orderItems;
 
     /**
+     * Order constructor
      *
-     * @param id
-     * @param cost
-     * @param orderItems
+     * @param id the order ID
+     * @param cost the total cost of the order
+     * @param orderItems list of all ordered items in this order
      */
     public Order(int id, double cost, ArrayList<MenuItem> orderItems) {
         this.id = id;
@@ -24,19 +26,15 @@ public class Order extends MenuItem {
         this.orderItems.addAll(orderItems);
     }
 
-    /**
-     *
-     * @return
-     * @author Cristian Gligan
-     */
     @Override
     public String toString() {
         return "Order " + name + ", " + cost + " kr";
     }
 
     /**
+     * Gets the list of all ordered items in this Order.
      *
-     * @return
+     * @return the list of all ordered items as {@link ArrayList} of {@link MenuItem}
      * @author Cristian Gligan
      */
     public ArrayList<MenuItem> getOrderItems() {

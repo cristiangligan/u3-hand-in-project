@@ -6,6 +6,8 @@ import javax.swing.*;
 import java.util.ArrayList;
 
 /**
+ * Contains a list of items on the menu, the order history and the buttons
+ * on the left side of the main panel.
  *
  * @author Cristian Gligan
  */
@@ -24,10 +26,11 @@ public class LPanel extends JPanel {
     private final MainFrame mainFrame;
 
     /**
+     * LPanel constructor
      *
-     * @param width
-     * @param height
-     * @param mainFrame
+     * @param width the width of the panel in pixels
+     * @param height the height of the panel in pixels
+     * @param mainFrame reference to the {@link MainFrame} instance
      * @author Cristian Gligan
      */
     public LPanel(int width, int height, MainFrame mainFrame) {
@@ -41,6 +44,7 @@ public class LPanel extends JPanel {
     }
 
     /**
+     * Sets up the UI of the {@link LPanel}.
      *
      * @author Cristian Gligan
      */
@@ -94,8 +98,9 @@ public class LPanel extends JPanel {
     }
 
     /**
+     * Returns an instance of the panel's list
      *
-     * @return
+     * @return instance of the panel's list
      * @author Cristian Gligan
      */
     protected JList<Object> getLeftPanelList() {
@@ -103,6 +108,7 @@ public class LPanel extends JPanel {
     }
 
     /**
+     * This method removes information in the panels list.
      *
      * @author Cristian Gligan
      */
@@ -112,8 +118,9 @@ public class LPanel extends JPanel {
     }
 
     /**
+     * Returns an instance of the "Order history" {@link JButton}.
      *
-     * @return
+     * @return instance of the "Order history" {@link JButton}
      * @author Cristian Gligan
      */
     protected JButton getShowOrderHistory() {
@@ -121,8 +128,9 @@ public class LPanel extends JPanel {
     }
 
     /**
+     * Returns an instance of the "Drinks" {@link JButton}.
      *
-     * @return
+     * @return instance of the "Drinks" {@link JButton}
      * @author Cristian Gligan
      */
     protected JButton getBtnShowDrinks() {
@@ -130,8 +138,9 @@ public class LPanel extends JPanel {
     }
 
     /**
+     * Returns an instance of the "Food" {@link JButton}.
      *
-     * @return
+     * @return instance of the "Food" {@link JButton}
      * @author Cristian Gligan
      */
     protected JButton getBtnShowFood() {
@@ -139,8 +148,9 @@ public class LPanel extends JPanel {
     }
 
     /**
+     * Returns an instance of the "Add" {@link JButton}.
      *
-     * @return
+     * @return instance of the "Add" {@link JButton}
      * @author Cristian Gligan
      */
     protected JButton getBtnAddSelectionToOrder() {
@@ -148,8 +158,9 @@ public class LPanel extends JPanel {
     }
 
     /**
+     * Returns an instance of the "Make Pizza" {@link JButton}.
      *
-     * @return
+     * @return instance of the "Make Pizza" {@link JButton}
      * @author Cristian Gligan
      */
     protected JButton getBtnCreateNewPizzaType() {
@@ -160,8 +171,8 @@ public class LPanel extends JPanel {
     /**
      * This method sets the information in the panel's list view.
      *
-     * @param items An array of String where each element will be shown
-     *              one line in the panel.
+     * @param items An {@link ArrayList} of {@link MenuItem} where each element
+     *              will be shown one line in the panel.
      * @author Cristian Gligan
      */
     public void populateList(ArrayList<MenuItem> items) {

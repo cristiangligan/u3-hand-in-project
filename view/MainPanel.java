@@ -3,6 +3,7 @@ package view;
 import javax.swing.*;
 
 /**
+ * MainPanel is the main container, containing instances of {@link LPanel} and {@link RPanel}.
  *
  * @author Cristian Gligan
  */
@@ -12,10 +13,11 @@ public class MainPanel extends JPanel {
 
 
     /**
+     * MainPanel constructor
      *
-     * @param width
-     * @param height
-     * @param mainFrame
+     * @param width the width of the panel in pixels
+     * @param height the height of the panel in pixels
+     * @param mainFrame reference to the {@link MainFrame} instance
      * @author Cristian Gligan
      */
     public MainPanel(int width, int height, MainFrame mainFrame) {
@@ -30,8 +32,9 @@ public class MainPanel extends JPanel {
     }
 
     /**
+     * Returns a reference to the {@link LPanel} instance
      *
-     * @return
+     * @return reference to the {@link LPanel} instance
      * @author Cristian Gligan
      */
     protected LPanel getLeftPanel() {
@@ -39,8 +42,9 @@ public class MainPanel extends JPanel {
     }
 
     /**
+     * Returns a reference to the {@link RPanel} instance
      *
-     * @return
+     * @return reference to the {@link RPanel} instance
      * @author Cristian Gligan
      */
     protected RPanel getRightPanel() {

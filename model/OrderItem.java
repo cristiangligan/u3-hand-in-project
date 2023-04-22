@@ -1,6 +1,7 @@
 package model;
 
 /**
+ * Class defining order items.
  *
  * @author Cristian Gligan
  */
@@ -9,8 +10,9 @@ public class OrderItem extends MenuItem {
     private final MenuItem menuItem;
 
     /**
+     * OrderItem constructor
      *
-     * @param menuItem
+     * @param menuItem reference to an instance of {@link OrderItem}
      * @author Cristian Gligan
      */
     public OrderItem(MenuItem menuItem) {
@@ -20,19 +22,15 @@ public class OrderItem extends MenuItem {
     }
 
     /**
+     * Gets the instance of the {@link MenuItem} attached to this order item.
      *
-     * @return
+     * @return the instance of the {@link MenuItem}
      * @author Cristian Gligan
      */
     public MenuItem getMenuItem() {
         return menuItem;
     }
 
-    /**
-     *
-     * @return
-     * @author Cristian Gligan
-     */
     @Override
     public String toString() {
         return name + ", " + cost + " kr";

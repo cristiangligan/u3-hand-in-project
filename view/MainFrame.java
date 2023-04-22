@@ -7,6 +7,7 @@ import javax.swing.*;
 import java.util.ArrayList;
 
 /**
+ * Is the main window of the application with a title and a border.
  *
  * @author Cristian Gligan
  */
@@ -15,10 +16,11 @@ public class MainFrame extends JFrame {
     private final Controller controller;
 
     /**
+     * MainFrame constructor
      *
-     * @param width
-     * @param height
-     * @param controller
+     * @param width the width of the panel in pixels
+     * @param height the height of the panel in pixels
+     * @param controller reference to the {@link Controller} instance
      * @author Cristian Gligan
      */
     public MainFrame(int width, int height, Controller controller) {
@@ -36,8 +38,8 @@ public class MainFrame extends JFrame {
     /**
      * This method sets the information in the LEFT panel of the main window.
      *
-     * @param items An array of String where each element will be shown
-     *              one line in the panel.
+     * @param items An {@link ArrayList} of {@link MenuItem} where each element
+     *              will be shown as one line in the panel.
      * @author Cristian Gligan
      */
     public void populateLeftPanel(ArrayList<MenuItem> items) {
@@ -47,8 +49,8 @@ public class MainFrame extends JFrame {
     /**
      * This method sets the information in the RIGHT panel of the main window.
      *
-     * @param items An array of String where each element will be shown
-     *                         one line in the panel.
+     * @param items An {@link ArrayList} of {@link MenuItem} where each element
+     *              will be shown one line in the panel.
      * @author Cristian Gligan
      */
     public void populateRightPanel(ArrayList<MenuItem> items) {
@@ -57,9 +59,6 @@ public class MainFrame extends JFrame {
 
     /**
      * This method removes information in the RIGHT panel of the main window.
-     * There are some problems with this in this code and "ghost items" might
-     * appear in the list view at the top of the list after use of this method.
-     * This might throw selected indexes of synchronization if this is used.
      * @author Cristian Gligan
      */
     public void clearRightPanel() {
@@ -67,7 +66,7 @@ public class MainFrame extends JFrame {
     }
 
     /**
-     *
+     * This method removes information in the LEFT panel of the main window.
      * @author Cristian Gligan
      */
     public void clearLeftPanel() {
@@ -87,7 +86,7 @@ public class MainFrame extends JFrame {
 
     /**
      * This method sets a text that shows to the farthest right in
-     * the window above the right listpanel.
+     * the window above the right list panel.
      *
      * @param newText the text that is shown in the GUI
      * @author Cristian Gligan
@@ -98,6 +97,7 @@ public class MainFrame extends JFrame {
 
     /**
      * This method disables the possibility to press the button labeled "Food".
+     *
      * @author Cristian Gligan
      */
     public void disableFoodMenuButton() {
@@ -107,6 +107,7 @@ public class MainFrame extends JFrame {
 
     /**
      * This method disables the possibility to press the button labeled "Drinks".
+     *
      * @author Cristian Gligan
      */
     public void disableDrinksMenuButton() {
@@ -116,6 +117,7 @@ public class MainFrame extends JFrame {
 
     /**
      * This method disables the possibility to press the button labeled "Add".
+     *
      * @author Cristian Gligan
      */
     public void disableAddMenuButton() {
@@ -124,6 +126,7 @@ public class MainFrame extends JFrame {
 
     /**
      * This method disables the possibility to press the button labeled "Order".
+     *
      * @author Cristian Gligan
      */
     public void disableOrderButton() {
@@ -132,6 +135,7 @@ public class MainFrame extends JFrame {
 
     /**
      * This method disables the possibility to press the button labeled "View order".
+     *
      * @author Cristian Gligan
      */
     public void disableViewSelectedOrderButton() {
@@ -140,6 +144,7 @@ public class MainFrame extends JFrame {
 
     /**
      * This method enables all buttons in the GUI to be pressed.
+     *
      * @author Cristian Gligan
      */
     public void enableAllButtons() {
